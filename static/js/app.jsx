@@ -1,5 +1,11 @@
 function App(){
-    return(<h1>Hello World</h1>)
+  return(
+    <React.Fragment>
+      <Header />
+      <h1>Hello World!</h1>
+      <Footer />
+    </React.Fragment>
+  )
 }
 
 
