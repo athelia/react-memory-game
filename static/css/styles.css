@@ -1,0 +1,28 @@
+.card {
+    border-radius: 15px;
+    border: 3px solid black;
+    width: 8em;
+    height: 4em;
+    margin: 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+  }
+
+  #play-area {
+    /* bg-image source: 
+    https://www.toptal.com/designers/subtlepatterns/retina-wood/ 
+    made by Alto Mo */
+    /* background-image: url('../images/table.png'); */
+    max-width:900px;
+    margin: 30px auto;
+    padding: 2em 2em;
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
