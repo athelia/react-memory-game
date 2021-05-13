@@ -1,6 +1,13 @@
 function PlayArea({deck, updateDeck, cardsInPlay, updateCardsInPlay}){
   const [selectedCards, updateSelectedCards] = React.useState([]);
 
+  React.useEffect(() => {
+    let setOfCards = new Set(cardsInPlay);
+    if (setOfCards.size === 1 && setOfCards.has(null)){
+      alert("YOU WIN!!!!!! 🎆");
+    }
+  }, [cardsInPlay])
+
   function selectCard(card){
     // select 1, then check a second selection
     if (selectedCards.length < 2){
@@ -48,7 +55,6 @@ function PlayArea({deck, updateDeck, cardsInPlay, updateCardsInPlay}){
     updateCardsInPlay(replacementCards);
     // setTimeout(() => updateSelectedCards([]), 1000);
     updateSelectedCards([]);
-
   }
 
   return(
