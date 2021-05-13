@@ -13,7 +13,7 @@ function PlayArea({deck, updateDeck, cardsInPlay, updateCardsInPlay}){
         // check card.word matches a previous selection
         if(selected[0].word === selected[1].word){
           console.log('found match', selected[0].word)
-          removeValidPair(selected);
+          setTimeout(() => removeValidPair(selected), 1000);
         } else {
           setTimeout(() => updateSelectedCards([]), 1000);
         }
@@ -43,7 +43,8 @@ function PlayArea({deck, updateDeck, cardsInPlay, updateCardsInPlay}){
     updateDeck(deck.slice(0, deck.length - numNewCards));
     // put the new cards into play
     updateCardsInPlay(replacementCards);
-    setTimeout(() => updateSelectedCards([]), 1000);
+    // setTimeout(() => updateSelectedCards([]), 1000);
+    updateSelectedCards([]);
 
   }
 
@@ -68,6 +69,7 @@ function PlayArea({deck, updateDeck, cardsInPlay, updateCardsInPlay}){
           key={card.id}
           color={card.color}
           word={card.word}
+          isSelected={selectedCards.includes(card)}
           onClick={selectedCards.includes(card) ? null : () => selectCard(card)}
         />
       )}
