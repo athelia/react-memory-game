@@ -1,7 +1,22 @@
 function PlayArea({deck, updateDeck, cardsInPlay, updateCardsInPlay}){
+  const [selectedCards, updateSelectedCards] = React.useState([]);
 
-  function selectCard(){
-    
+  function selectCard(card){
+    // select 1, then check a second selection
+    if (selectedCards.length < 2){
+      // keep track of what we've selected
+      let selected = [];
+      selected = [...selectedCards, card];
+      updateSelectedCards(selected);
+      console.log('selectedCards', selectedCards)
+      if (selected.length === 2){
+        // check card.word matches a previous selection
+        if(selected[0].word === selected[1].word){
+          console.log('found match', selected[0].word)
+        }
+        setTimeout(() => updateSelectedCards([]), 1000);
+      }
+    }
   }
 
   return(
@@ -25,7 +40,7 @@ function PlayArea({deck, updateDeck, cardsInPlay, updateCardsInPlay}){
           key={card.id}
           color={card.color}
           word={card.word}
-          onClick={}
+          onClick={() => selectCard(card)}
         />
       )}
     </div>
