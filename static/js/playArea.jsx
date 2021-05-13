@@ -1,27 +1,33 @@
-function PlayArea(){
-  const [cardData, updateCardData] = React.useState([]);
-  const [cardsInPlay, updateCardsInPlay] = React.useState([]);
+function PlayArea({deck, updateDeck, cardsInPlay, updateCardsInPlay}){
 
-  React.useEffect(() => {
-    fetch('/cards.json')
-    .then(res => res.json())
-    .then(data => updateCardData(data))
-  }, [])
-
-  // updateCardsInPlay(cardData.slice(0,16));
+  function selectCard(){
+    
+  }
 
   return(
     <div id='play-area'>
-      {cardData.map(card => {
+      {/*  
+      option1: 
+        (param) => value
+      option2:
+        (param) => { return value }
+      */}
+      {/* for card in cardsInPlay:
+            Card[key] = card.id
+            Card[color] = card.color
+            Card[word] = card.word
+            return Card
+       */}
+      {cardsInPlay.map(card => // with a fn expr, if we use curlies, need explicit return
+        // do something else here 
+        // do another thing
         <Card 
           key={card.id}
           color={card.color}
           word={card.word}
+          onClick={}
         />
-      })}
-      {/* <Card id={cardData[0].id} color={cardData[0].color} word={cardData[0].word} /> */}
-      <Card id='0b' color='blue' word='muffin' />
-      <Card id='0a' color='green' word='bananaslug' />
+      )}
     </div>
   );
 }
