@@ -6,6 +6,7 @@ function PlayArea({deck, updateDeck, cardsInPlay, updateCardsInPlay}){
     if (selectedCards.length < 2){
       // keep track of what we've selected
       let selected = [];
+      // ... -> 'spread operator'
       selected = [...selectedCards, card];
       updateSelectedCards(selected);
       console.log('selectedCards', selectedCards)
