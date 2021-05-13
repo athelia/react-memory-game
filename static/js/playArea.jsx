@@ -35,6 +35,8 @@ function PlayArea({deck, updateDeck, cardsInPlay, updateCardsInPlay}){
         if (newCards.length > 0){
           // update the cards in play -> remove the pair
           replacementCards.push(newCards.pop())
+        } else {
+          replacementCards.push(null);
         }
       } else {
         replacementCards.push(card)
@@ -66,13 +68,15 @@ function PlayArea({deck, updateDeck, cardsInPlay, updateCardsInPlay}){
       {cardsInPlay.map(card => // with a fn expr, if we use curlies, need explicit return
         // do something else here 
         // do another thing
-        <Card 
+        card ? <Card 
           key={card.id}
           color={card.color}
           word={card.word}
           isSelected={selectedCards.includes(card)}
           onClick={selectedCards.includes(card) ? null : () => selectCard(card)}
-        />
+        /> : <div 
+          className='card'
+          />
       )}
     </div>
   );
