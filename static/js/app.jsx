@@ -2,7 +2,7 @@ function App(){
   return(
     <React.Fragment>
       <Header />
-      <h1>Hello World!</h1>
+      <Main />
       <Footer />
     </React.Fragment>
   )
