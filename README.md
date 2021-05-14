@@ -6,7 +6,8 @@
 ## Nice-to-Have Features:
 - [x] Add placeholder spots for removed cards
 - [ ] Score for how many clicks to complete game 
-- [ ] Show count for deck size that's left ***Up next ***
+- [x] Show count for deck size that's left
 - [ ] Change background image or card backs
 - [x] Some kind of win alert/reaction
 - [ ] Two player mode to alternate awarding points
+- [ ] Redeal when a game ends - WIP
