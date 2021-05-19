@@ -11,3 +11,6 @@
 - [x] Some kind of win alert/reaction
 - [ ] Two player mode to alternate awarding points
 - [ ] Redeal when a game ends - WIP
+
+## References
+[Wireframe](https://balsamiq.cloud/sux2im4/p6xyz6p)
